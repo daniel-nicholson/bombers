@@ -9,7 +9,7 @@
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icomoon-"], [class*=" icomoon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -24,31 +24,31 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-benefit-1-discount:before {
+.icomoon-benefit-1-discount:before {
   content: "\e900";
 }
-.icon-benefit-2-tickets:before {
+.icomoon-benefit-2-tickets:before {
   content: "\e901";
 }
-.icon-benefit-3-giftcard:before {
+.icomoon-benefit-3-giftcard:before {
   content: "\e902";
 }
-.icon-benefit-4-seats:before {
+.icomoon-benefit-4-seats:before {
   content: "\e903";
 }
-.icon-benefit-5-crowd:before {
+.icomoon-benefit-5-crowd:before {
   content: "\e904";
 }
-.icon-benefit-6-grey-cup:before {
+.icomoon-benefit-6-grey-cup:before {
   content: "\e905";
 }
-.icon-benefit-7-member:before {
+.icomoon-benefit-7-member:before {
   content: "\e906";
 }
-.icon-benefit-8-calendar:before {
+.icomoon-benefit-8-calendar:before {
   content: "\e907";
 }
-.icon-benefit-9-mobile:before {
+.icomoon-benefit-9-mobile:before {
   content: "\e908";
 }
 

@@ -57,4 +57,13 @@
 .icomoon-benefit-11-flex:before {
   content: "\e9010";
 }
+.icomoon-benefit-14-limited:before {
+  content: "\e9011";
+}
+.icomoon-benefit-13-sold:before {
+  content: "\e9012";
+}
+.icomoon-benefit-12-new:before {
+  content: "\e9013";
+}
 

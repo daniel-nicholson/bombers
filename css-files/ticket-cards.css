@@ -1,0 +1,141 @@
+<style>
+/*---------------------------------------------
+SEAT TICKETS
+----------------------------------------------*/
+.cardWrap {
+  margin: 0 auto;
+  color: #fff;
+  font-family: sans-serif;
+}
+.card-row {
+    padding: 25px;
+}
+
+.cardWrap p {
+  margin: 0;
+}
+
+.card {
+  height: 11em;
+  float: left;
+  position: relative;
+  padding: 1em;
+}
+.card-p1 {background: linear-gradient(to bottom, #6c4f1f 0%, #483414 26%, #ecedef 26%, #ecedef 100%);}
+.card-p1 .number h3 {color: #6c4f1f;}
+.card-p1 h1 {color: #fff;}
+.card-p1 button:hover {background-color: #6c4f1f;}
+.card .limited:hover {background-color:#90052b;}
+.card-p2 {background: linear-gradient(to bottom, #be955b 0%, #8e6c3d 26%, #ecedef 26%, #ecedef 100%);}
+.card-p2 .number h3 {color: #be955b;}
+.card-p2 h1 {color: #fff;}
+.card-p2 button:hover {background-color: #be955b;}
+.card-p3 {background: linear-gradient(to bottom, #2aa7df 0%, #1f8cbd 26%, #ecedef 26%, #ecedef 100%);}
+.card-p3 .number h3 {color: #2aa7df;}
+.card-p3 h1 {color: #fff;}
+.card-p3 button:hover {background-color: #2aa7df;}
+.card-p4 {background: linear-gradient(to bottom, #fbf28d 0%, #e2d21d 26%, #ecedef 26%, #ecedef 100%);}
+.card-p4 .number h3 {color: #d2c20c;}
+.card-p4 h1 {color: #000;}
+.card-p4 button:hover {background-color: #e2d21d; color: #000;}
+.card-p4 button:active {color:#fff;}
+.card-p5 {background: linear-gradient(to bottom, #053d88 0%, #0c223f 26%, #ecedef 26%, #ecedef 100%);}
+.card-p5 .number h3 {color: #0c223f;}
+.card-p5 h1 {color: #fff;}
+.card-p5 button:hover {background-color: #053d88;}
+.card-p6 {background: linear-gradient(to bottom, #f9b617 0%, #bd8500 26%, #ecedef 26%, #ecedef 100%);}
+.card-p6 .number h3 {color: #f9b617;}
+.card-p6 h1 {color: #fff;}
+.card-p6 button:hover {background-color: #f9b617;}
+.card-p7 {background: linear-gradient(to bottom, #efefef 0%, #fff 26%, #ecedef 26%, #ecedef 100%);}
+.card-p7 .number h3 {color: #848484;}
+.card-p7 button:hover {background-color: #fff; color: #000;}
+.card-p7 button:active {color: #fff;}
+.card-pFF {background: linear-gradient(to bottom, #bce5f5 0%, #bce5f5 26%, #ecedef 26%, #ecedef 100%);}
+.card-pFF .number h3 {color: #bce5f5;}
+.card-pFF button:hover {background-color: #bce5f5;color: #000;}
+.card-pFF button:active {color: #fff;}
+
+.card button {
+  position: relative;
+  padding: 10px 20px;
+  color: #fff;
+  font: bold 12px Arial, Helvetica;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all .3s ease;
+  margin-right: 5px;
+  width: 100%;
+  background-color: #a7a9ab;
+}
+
+.card button:hover {
+  transition: all .3s ease;
+}
+.card button:active {
+  background-color: #1e3d79;;
+}
+.card button:focus {
+    outline: none;
+}
+.cardLeft {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  width:66.67%;
+  border-right: none;
+}
+
+.cardRight {
+  border-left: .18em dashed #fff;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  width:33.33%;
+}
+
+.card h1 {
+  font-size: 1.1em;
+  margin-top: 0;
+}
+.card h1 span {
+  font-weight: normal;
+}
+
+.seat h2,
+.time h2 {
+  font-size: 21px;
+  color: #525252;
+  margin: 0;
+  font-family:droid serif,sans-serif;
+  font-weight: bold;
+}
+.seat span,
+.time span {
+  font-size: .7em;
+  color: #999;
+}
+
+.time {
+  margin: 0 0 0 1em;
+}
+
+.seat,
+.time {
+  float: left;
+}
+
+.number {
+  text-align: center;
+  text-transform: uppercase;
+}
+.number h3 {
+  margin: .9em 0 0 0;
+  font-size: 2.5em;
+}
+.number span {
+  display: block;
+  color: #999;
+}
+</style>

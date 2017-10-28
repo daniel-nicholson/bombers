@@ -1,0 +1,204 @@
+<script>
+/* Populate 'call-year' with this year and next year's numbers */
+var minYear = new Date().getFullYear(),
+    maxYear = minYear + 1,
+    selectYear = document.getElementById('call-year-2');
+
+for (var iYear = minYear; iYear<=maxYear; iYear++){
+    var optYear = document.createElement('option');
+    optYear.value = iYear;
+    optYear.innerHTML = iYear;
+    selectYear.appendChild(optYear);
+}
+
+/* Write out the full days of the week */
+var weekdayArr = new Array(7);
+	weekdayArr[0] = "Sunday";
+	weekdayArr[1] = "Monday";
+	weekdayArr[2] = "Tuesday";
+	weekdayArr[3] = "Wednesday";
+	weekdayArr[4] = "Thursday";
+	weekdayArr[5] = "Friday";
+	weekdayArr[6] = "Saturday";
+
+function generateMonths () {
+    var checkYear = new Date().getFullYear();
+    var checkMonth = new Date().getMonth();
+		var year = document.getElementById('call-year-2').value;
+
+  if(year == "") {
+  	 document.getElementById('call-month-2').disabled = true;
+  }
+  else  {
+  		document.getElementById('call-month-2').disabled = false;
+      document.getElementById('call-month-2').innerHTML = "";
+      if(year == checkYear) {
+     		var minMonth = new Date().getMonth()+1;
+      	var maxMonth = 12;
+      	var selectMonth = document.getElementById('call-month-2');
+        for (var iMonth = minMonth; iMonth<=maxMonth; iMonth++){
+    			var optMonth = document.createElement('option');
+    			optMonth.value = iMonth;
+    			optMonth.innerHTML = iMonth;
+    			selectMonth.appendChild(optMonth);
+      }
+      	document.getElementById('message').value = optMonth;
+      } else {
+      	document.getElementById('call-month-2').innerHTML = "";
+        var minMonth = 1;
+      	var maxMonth = 12;
+      	var selectMonth = document.getElementById('call-month-2');
+        for (var iMonth = minMonth; iMonth<=maxMonth; iMonth++){
+    			var optMonth = document.createElement('option');
+    			optMonth.value = iMonth;
+    			optMonth.innerHTML = iMonth;
+    			selectMonth.appendChild(optMonth);
+      }
+      document.getElementById('message').value = "Tiny Rick";
+      /*
+      				for (var iMonth = minMonth; iMonth<=maxMonth; iMonth++){
+    			var optMonth = document.createElement('option');
+    			optMonth.value = iMonth;
+    			optMonth.innerHTML = iMonth;
+    			selectMonth.appendChild(optMonth);
+      }
+      */
+
+      }
+
+  }
+
+}
+
+/*
+function run() {
+
+
+    var year = document.getElementById('call-year-2').value;
+    var month = document.getElementById('call-month-2').value
+  var selectDay = document.getElementById("call-day").value;
+
+  var selectFull = new Date(year,(month-1),selectDay);
+    	 var weekdayStr = weekdayArr[selectFull.getDay()];
+       document.getElementById("call-day-2").value = weekdayStr;
+       	document.getElementById("message").value = year;
+
+}
+*/
+/*
+function generateDays(sel) {
+    var year = document.getElementById('call-year').value;
+    var month = document.getElementById('call-month').value
+    if(year == "" || month == "") {
+       //disable your bday input or do whatever you want
+       document.getElementById('call-day').disabled = true;
+    } else {
+
+
+        var days = new Date(year, month, 0).getDate();
+        //enable bday in case it was previously disabled
+        document.getElementById('call-day').disabled = false;
+
+        //Clear the bday select element first
+        document.getElementById('call-day').innerHTML = "";
+
+
+        for (i = 1; i <= days; i++) {
+            document.getElementById('call-day').innerHTML += "<option value='"+i+"'>"+i+"</option>";
+        }
+       var selectDay = document.getElementById("call-day").value;
+       var selectFull = new Date(year,(month-1),selectDay);
+    	 var weekdayStr = weekdayArr[selectFull.getDay()];
+       document.getElementById("call-day-2").value = weekdayStr;
+
+
+
+    }
+
+}
+
+function run() {
+    var year = document.getElementById('call-year').value;
+    var month = document.getElementById('call-month').value
+  var selectDay = document.getElementById("call-day").value;
+
+  var selectFull = new Date(year,(month-1),selectDay);
+    	 var weekdayStr = weekdayArr[selectFull.getDay()];
+       document.getElementById("call-day-2").value = weekdayStr;
+
+}
+
+
+var selectDay = document.getElementById('call-day').value
+        var selectFull = new Date(year,(month-1),selectDay);
+        document.getElementById("message").innerHTML = selectFull;
+        var weekday = new Array(7);
+					weekday[0] =  "Sunday";
+					weekday[1] = "Monday";
+					weekday[2] = "Tuesday";
+					weekday[3] = "Wednesday";
+					weekday[4] = "Thursday";
+					weekday[5] = "Friday";
+					weekday[6] = "Saturday";
+    		var x = n[selectDay.getDay()];
+        document.getElementById("message").innerHTML = x;
+
+         var selectDay = document.getElementById('call-day').value
+		document.getElementById("message").innerHTML = selectDay;
+    var selectFull = new Date(year,(month-1),selectDay);
+    */
+</script>
+
+<html>
+
+
+ <!-- <select id="call-year" name="call-year" onchange="generateDays(run())" required>
+        <option value="">Select Year</option>
+    </select> -->
+   <select id="call-year-2" name="call-year-2" onchange="generateMonths();" required>
+        <option value="">Select Year</option>
+    </select>
+<!--
+    <select id="call-month" name="call-month" onchange="generatedays()" required>
+        <option value="">Select Month</option>
+    </select>
+-->
+        <select id="call-month-2" name="call-month-2" onchange="run(); generateMonths();" required disabled>
+        <option value="">Select Month</option>
+    </select>
+
+
+    <select id="call-day" name="call-day" onchange="run()" required disabled>
+       <option value="">Select Day</option>
+    </select>
+    										<select name="call-time" id="call-time">
+											<option value="">- Time of Day -</option>
+											<option value="9a-10a">9:00a-10:00a</option>
+											<option value="10a-11a">10:00a-11:00a</option>
+											<option value="11a-12p">11:00a-12:00p</option>
+											<option value="12p-1p">12:00p-1:00p</option>
+											<option value="1p-2p">1:00p-2:00p</option>
+											<option value="2p-3p">2:00p-3:00p</option>
+											<option value="3p-4p">3:00p-4:00p</option>
+											<option value="4p-5p">4:00p-5:00p</option>
+											<option value="5p-6p">5:00p-6:00p</option>
+										</select>
+
+    										<select name="seating" id="seating">
+											<option value="">- Select Seat level -</option>
+											<option value="P1-100">Lower Bowl - P1 - 100 Level</option>
+											<option value="P2-100">Lower Bowl - P2 - 100 Level</option>
+											<option value="P3-100">Lower Bowl - P3 - 100 Level</option>
+											<option value="P4-100">Lower Bowl - P4 - 100 Level</option>
+											<option value="P5-100">Lower Bowl - P5 - 100 Level</option>
+											<option value="FF-100">Lower Bowl - FF - 100 Level</option>
+											<option value="P3-200">Upper Bowl - P3 - 200 Level</option>
+											<option value="P4-200">Upper Bowl - P4 - 200 Level</option>
+											<option value="P6-200">Upper Bowl - P6 - 200 Level</option>
+											<option value="P7-200">Upper Bowl - P7 - 200 Level</option>
+										</select>
+
+    <input type="text" id="call-day-2" name="call-day-2" onchange="run()">
+
+    <input type="text" id="message" name="message">
+    </html>

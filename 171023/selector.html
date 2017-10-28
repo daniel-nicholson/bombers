@@ -1,0 +1,126 @@
+<script>
+/* Populate 'call-year' with this year and next year's numbers */
+var min = new Date().getFullYear(),
+    max = min + 1,
+    select = document.getElementById('call-year');
+
+for (var i = min; i<=max; i++){
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+}
+
+
+
+/* Write out the full days of the week */
+var weekdayArr = new Array(7);
+	weekdayArr[0] = "Sunday";
+	weekdayArr[1] = "Monday";
+	weekdayArr[2] = "Tuesday";
+	weekdayArr[3] = "Wednesday";
+	weekdayArr[4] = "Thursday";
+	weekdayArr[5] = "Friday";
+	weekdayArr[6] = "Saturday";
+
+function generateDays(sel) {
+    var year = document.getElementById('call-year').value;
+    var month = document.getElementById('call-month').value
+    if(year == "" || month == "") {
+       //disable your bday input or do whatever you want
+       document.getElementById('call-day').disabled = true;
+    } else {
+
+
+        var days = new Date(year, month, 0).getDate();
+        //enable bday in case it was previously disabled
+        document.getElementById('call-day').disabled = false;
+
+        //Clear the bday select element first
+        document.getElementById('call-day').innerHTML = "";
+
+
+        for (i = 1; i <= days; i++) {
+            document.getElementById('call-day').innerHTML += "<option value='"+i+"'>"+i+"</option>";
+        }
+       var selectDay = document.getElementById("call-day").value;
+       var selectFull = new Date(year,(month-1),selectDay);
+    	 var weekdayStr = weekdayArr[selectFull.getDay()];
+       document.getElementById("call-day-2").value = weekdayStr;
+
+
+
+    }
+
+}
+
+function run() {
+    var year = document.getElementById('call-year').value;
+    var month = document.getElementById('call-month').value
+  var selectDay = document.getElementById("call-day").value;
+
+  var selectFull = new Date(year,(month-1),selectDay);
+    	 var weekdayStr = weekdayArr[selectFull.getDay()];
+       document.getElementById("call-day-2").value = weekdayStr;
+
+}
+
+/*
+var selectDay = document.getElementById('call-day').value
+        var selectFull = new Date(year,(month-1),selectDay);
+        document.getElementById("message").innerHTML = selectFull;
+        var weekday = new Array(7);
+					weekday[0] =  "Sunday";
+					weekday[1] = "Monday";
+					weekday[2] = "Tuesday";
+					weekday[3] = "Wednesday";
+					weekday[4] = "Thursday";
+					weekday[5] = "Friday";
+					weekday[6] = "Saturday";
+    		var x = n[selectDay.getDay()];
+        document.getElementById("message").innerHTML = x;
+
+         var selectDay = document.getElementById('call-day').value
+		document.getElementById("message").innerHTML = selectDay;
+    var selectFull = new Date(year,(month-1),selectDay);
+    */
+</script>
+
+<html>
+
+
+  <select id="call-year" name="call-year" onchange="generateDays(run())" required>
+        <option value="">Select Year</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        /*you can hardcode the years here or just generate it with a js function*/
+    </select>
+
+    <select id="call-month" name="call-month" onchange="generateDays()" required>
+        <option value="">Select Month</option>
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">Novermber</option>
+        <option value="12">December</option>
+    </select>
+
+
+    <select id="call-day" name="call-day" onchange="run()" required disabled>
+       <option value="">Select Day</option>
+    </select>
+
+    <input type="text" id="call-day-2" name="call-day-2" onchange="run()">
+
+    <p id="message"></p>
+</html>
